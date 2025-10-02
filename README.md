@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Swipe AI Interview Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React-based frontend application for an AI-powered interview platform. This application allows candidates to upload their resumes, register for interviews, and take timed multiple-choice question (MCQ) assessments. Interviewers can manage and review interview sessions through a dedicated dashboard.
+
+## Features
+
+- **Resume Upload & Parsing**: Support for PDF and DOCX resume uploads with automatic parsing of candidate information (name, email, phone)
+- **Timed MCQ Interviews**: Interactive, time-bound multiple-choice AI Generated question assessments
+- **AI-Powered Evaluation**: Integration with AI services for intelligent scoring and feedback
+- **State Management**: Redux-based state management
+- **Interviewer Dashboard**: Comprehensive interface for interviewers to manage and monitor interview sessions
+- **Responsive Design**: Built with Ant Design for a modern, responsive user interface
+
+## Tech Stack
+
+- **Frontend Framework**: React 18
+- **State Management**: Redux Toolkit, Redux Persist
+- **UI Library**: Ant Design
+- **Routing**: React Router DOM
+- **HTTP Client**: Axios
+- **Document Parsing**: PDF.js, Mammoth (for DOCX)
+- **Build Tool**: Create React App
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd swipe_ai_interview/frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+The application will run on `http://localhost:3000`.
+
+## Usage
+
+1. **Home Page**: Navigate to the root URL to access the main landing page
+2. **For Candidates**:
+   - Go to `/interviewee`
+   - Upload your resume (PDF or DOCX)
+   - Fill in the parsed information or edit as needed
+   - Click "Start Test" to begin the timed MCQ interview
+3. **For Interviewers**:
+   - Navigate to `/interviewer`
+   - Access the dashboard to manage interview sessions
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── homePage.jsx     # Landing page component
+│   ├── Interviewee.jsx  # Candidate interview interface
+│   ├── Interviewer.jsx  # Interviewer dashboard
+│   ├── questions.jsx    # MCQ question component
+│   ├── ResumeUpload.jsx # Resume upload component
+│   └── WelcomeBackModal.jsx # Welcome back modal
+|
+├── services/            # API services
+│   ├── ai.js            # AI evaluation service
+│   └── resumeParser.js  # Resume parsing service
+├── store/               # Redux store configuration
+│   ├── interviewSlice.js # Interview state slice
+│   └── store.js         # Store setup
+├── utils/               # Utility functions
+│   └── questionBank.js  # Question database
+└── styles.css           # Global styles
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start`: Runs the app in development mode
 
-### `npm start`
+## Dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Key dependencies include:
+- React and React DOM for the UI framework
+- Redux Toolkit for state management
+- Ant Design for UI components
+- Axios for API calls
